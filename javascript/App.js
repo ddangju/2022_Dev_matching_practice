@@ -15,9 +15,12 @@ export default function App({ $target }) {
 // ----초기값과 div 인스턴스 생성----
   new SearchInput({
     $target,
-    initialState:""
+    initialState:"",
+    onChange: async (keyword) =>{
+      let languages = await fetchLanguages(keyword)
+      console.log(languages,"<languages")
+    }
   })
-  console.log(fetchLanguages ,"<apiLanguages")
 }
 
 

@@ -8,7 +8,7 @@
 // 위와 같이 arrow function으로 작성하면 x is not a contructor type error가 발생
 //해당 객체 또는 변수가 생성자가 아닌 경우 나오는 에러인데,,,,아래와 같은 다른 형식의 함수인데 대체 왜,,,?
 //화살표 함수와 new키워드는 허용하지 않는다!!!!!
-export default function SearchInput({$target, initialState}){
+export default function SearchInput({$target, initialState, onChange}){
   //this를 변수처럼 사용 / this는 함수에게 바인딩 된다~
   this.$element = document.createElement("form")
   this.$element.className ="SearchInput"
@@ -23,5 +23,9 @@ export default function SearchInput({$target, initialState}){
     `
   }
   this.render()
+  
+  this.$element.addEventListener("keyup",(e)=>{
+    onChange(e.target.value)
+  })
 
 }
