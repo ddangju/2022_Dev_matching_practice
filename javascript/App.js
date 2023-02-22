@@ -19,7 +19,6 @@ export default function App({ target }) {
     // suggestion에 있는 setState업데이트
     //초기값인 items:[]를 업데이트
     suggestion.setState({ items: this.state.fetchedLanguages });
-    console.log(suggestion);
   };
 
   // ----초기값과 div 인스턴스 생성----
