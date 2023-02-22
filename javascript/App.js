@@ -16,6 +16,7 @@ export default function App({ target }) {
       ...this.state,
       ...nextState,
     };
+
     // suggestion에 있는 setState업데이트
     //초기값인 items:[]를 업데이트
     suggestion.setState({ items: this.state.fetchedLanguages });
