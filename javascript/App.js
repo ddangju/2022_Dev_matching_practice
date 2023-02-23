@@ -16,6 +16,18 @@ export default function App({ target }) {
       ...this.state,
       ...nextState,
     };
+    ///////*****풀어보자면? */
+    // this.state = {
+    //   {
+  //   fetchedLanguages: [],
+  //   selectedLanguages: [],
+  // };,
+    //   {
+    //   fetchedLanguages: [languages],
+  // target.append(this.div)
+    // }
+    // };
+
     console.log();
     // suggestion에 있는 setState업데이트
     //초기값인 items:[]를 업데이트
@@ -41,7 +53,6 @@ export default function App({ target }) {
       }
     },
   });
-
   const suggestion = new Suggestion({
     target,
     initialState: {

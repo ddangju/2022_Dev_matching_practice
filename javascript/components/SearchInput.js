@@ -17,11 +17,14 @@ export default function SearchInput({ target, initialState, onChange }) {
   // APP테그 자식으로 form테그를 붙인다
   ///********appendchild경우에 node만 붙일 수 있다. 테그에 text는 추가할 수 없음 */
   target.appendChild(this.form);
+
+  // 이 render함수는 innerHTML로 화면에 그리기 때문에 이름을 render로 붙임
   this.render = () => {
     this.form.innerHTML = `
     <input class="SearchInput__input" type="text" placeholder="프로그램 언어를 입력하세요." value="${this.state}">
     `;
   };
+  
   this.render();
 
   this.form.addEventListener("keyup", (e) => {
