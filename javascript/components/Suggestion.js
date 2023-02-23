@@ -1,10 +1,44 @@
 export default function Suggestion({ target, initialState }) {
-  this.state = initialState; 
-  //// {items:[]}
+  this.state = initialState;
   this.setState = (nextState) => {
     // {items:["1","2"]} 형태로 넘어옴
     this.state = nextState;
-    this.render()
+    this.render();
+  };
+  this.div = document.createElement("div");
+  this.div.className = "Suggestion";
+  target.appendChild(this.div);
+
+  this.render = () => {
+    const { items = [] } = this.state;
+    if (items.length > 0) {
+      this.div.style.display = "block";
+      this.div.innerHTML = `
+      <ul>
+        ${items
+          .map(
+            (item, index) => `
+          <li data-index="${index}">${item}</li>
+        `
+          )
+          .join("")}
+      </ul>
+    `;
+      // console.log(
+      //   items
+      //     .map(
+      //       (item, index) => `
+      //   <li data-index="${index}">${item}</li>
+      // `
+      //     )
+      //     .join("")
+      // );
+
+      //
+    } else {
+      this.div.style.display = "none";
+      this.div.innerHTML = "";
+    }
   };
 
   this.div = document.createElement("div")
