@@ -16,6 +16,8 @@ export default function App({ target }) {
       ...this.state,
       ...nextState,
     };
+    suggestion.setState({ items: this.state.fetchedLanguages, selectedIndex:0 });
+
     ///////*****풀어보자면? */
     // this.state = {
     //   {
@@ -27,11 +29,8 @@ export default function App({ target }) {
   // target.append(this.div)
     // }
     // };
-
-    console.log();
     // suggestion에 있는 setState업데이트
     //초기값인 items:[]를 업데이트
-    suggestion.setState({ items: this.state.fetchedLanguages });
   };
 
   // ----초기값과 div 인스턴스 생성----
@@ -57,6 +56,7 @@ export default function App({ target }) {
     target,
     initialState: {
       items: [],
+      cursor:0
     },
   });
 }
