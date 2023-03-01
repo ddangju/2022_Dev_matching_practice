@@ -16,17 +16,20 @@ export default function App({ target }) {
       ...this.state,
       ...nextState,
     };
-    suggestion.setState({ items: this.state.fetchedLanguages, selectedIndex:0 });
+    suggestion.setState({
+      ...suggestion.state,
+      items: this.state.fetchedLanguages,
+    });
 
     ///////*****풀어보자면? */
     // this.state = {
     //   {
-  //   fetchedLanguages: [],
-  //   selectedLanguages: [],
-  // };,
+    //   fetchedLanguages: [],
+    //   selectedLanguages: [],
+    // };,
     //   {
     //   fetchedLanguages: [languages],
-  // target.append(this.div)
+    // target.append(this.div)
     // }
     // };
     // suggestion에 있는 setState업데이트
@@ -56,7 +59,28 @@ export default function App({ target }) {
     target,
     initialState: {
       items: [],
-      cursor:0
+      selectedIndex: -1,
     },
+  });
+
+  window.addEventListener("keyup", (e) => {
+    if (suggestion.state?.items?.length > 0) {
+      if (e.key === "ArrowUp") {
+        if (suggestion.state.selectedIndex > 0) {
+          suggestion.state.selectedIndex -= 1;
+          console.log(suggestion.state.selectedIndex);
+        }
+      } else if (e.key === "ArrowDown") {
+        if (
+          suggestion.state.selectedIndex <
+          suggestion.state.items.length - 1
+        ) {
+          suggestion.setState({
+            ...suggestion.state,
+            selectedIndex: suggestion.state.selectedIndex + 1,
+          });
+        }
+      }
+    }
   });
 }
