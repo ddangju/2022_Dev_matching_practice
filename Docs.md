@@ -79,3 +79,7 @@ items에 대하여 map함수를 호출시켜보자.
 map함수는 새로운 배열을 반환하고 있다(아래 이미지로 확인 가능)
 
 <img src="https://user-images.githubusercontent.com/68775082/220659767-d1ab56f1-96dc-488d-ac6d-58bb6703872d.png"  alt="img" width="700px"/>
+
+
+
+suggestion에서 setState
