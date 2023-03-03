@@ -82,4 +82,4 @@ map함수는 새로운 배열을 반환하고 있다(아래 이미지로 확인 
 
 
 
-suggestion에서 setState
+suggestion에서 setState를 하기
