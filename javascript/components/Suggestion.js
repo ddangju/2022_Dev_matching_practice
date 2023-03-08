@@ -1,7 +1,8 @@
-export default function Suggestion({ target, initialState }) {
+export default function Suggestion({ target, initialState, onSelect }) {
   this.state = {
     selectedIndex: -1,
     items: initialState.items,
+    onSelect,
   };
 
   this.setState = (nextState) => {
@@ -36,6 +37,26 @@ export default function Suggestion({ target, initialState }) {
       this.div.innerHTML = "";
     }
   };
+  window.addEventListener("keydown", (e) => {
+    // if (this.state?.items?.length > 0) {
+    //   if (e.key === "ArrowUp") {
+    //     if (this.state.selectedIndex > 0) {
+    //       this.state.selectedIndex -= 1;
+    //     } else if (e.key === "ArrowDown") {
+    //       if (this.state.selectedIndex < this.state.items.length - 1) {
+    //         this.setState({
+    //           ...this.state,
+    //           this.state.selectedIndex: this.state.selectedIndex + 1,
+    //         });
+    //       }
+    //     }
+    //   }
+    // }
+    if (e.key === "Enter") {
+      e.preventDefault();
+      onSelect(this.state.items[this.state.selectedIndex]);
+    }
+  });
 
   // append vs apeendChild
   /// appendChild의 경우 노트요소만 추가할 수 있음
