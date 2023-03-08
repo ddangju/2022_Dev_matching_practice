@@ -1,9 +1,15 @@
+// Suggestion 생성자 함수를 정의
 export default function Suggestion({ target, initialState, onSelect }) {
   this.state = {
-    selectedIndex: -1,
+    selectedIndex: initialState.selectedIndex,
     items: initialState.items,
-    onSelect,
   };
+  // this.onSelect = (lang) => {
+  //   console.log(lang, "<lang");
+  // };
+  //this.onSelect => suggestion.js가 갖고있는 property
+  //onSelect =>
+  this.onSelect = onSelect;
 
   this.setState = (nextState) => {
     // {items:["1","2"]} 형태로 넘어옴
@@ -37,27 +43,6 @@ export default function Suggestion({ target, initialState, onSelect }) {
       this.div.innerHTML = "";
     }
   };
-  window.addEventListener("keydown", (e) => {
-    // if (this.state?.items?.length > 0) {
-    //   if (e.key === "ArrowUp") {
-    //     if (this.state.selectedIndex > 0) {
-    //       this.state.selectedIndex -= 1;
-    //     } else if (e.key === "ArrowDown") {
-    //       if (this.state.selectedIndex < this.state.items.length - 1) {
-    //         this.setState({
-    //           ...this.state,
-    //           this.state.selectedIndex: this.state.selectedIndex + 1,
-    //         });
-    //       }
-    //     }
-    //   }
-    // }
-    if (e.key === "Enter") {
-      e.preventDefault();
-      onSelect(this.state.items[this.state.selectedIndex]);
-    }
-  });
-
   // append vs apeendChild
   /// appendChild의 경우 노트요소만 추가할 수 있음
   /// aeepnd의 경우 노드요소와 돔스트링을 추가할 수 있음
