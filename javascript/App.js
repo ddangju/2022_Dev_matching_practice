@@ -61,14 +61,18 @@ export default function App({ target }) {
       items: [],
       selectedIndex: -1,
     },
+    onSelect: (lang) => {
+      alert(lang, "<lang");
+      console.log(lang, "<lang");
+    },
   });
 
-  window.addEventListener("keyup", (e) => {
+  window.addEventListener("keydown", (e) => {
     if (suggestion.state?.items?.length > 0) {
       if (e.key === "ArrowUp") {
         if (suggestion.state.selectedIndex > 0) {
           suggestion.state.selectedIndex -= 1;
-          console.log(suggestion.state.selectedIndex);
+          // console.log(suggestion.state.selectedIndex);
         }
       } else if (e.key === "ArrowDown") {
         if (
