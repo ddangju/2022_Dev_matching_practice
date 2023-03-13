@@ -111,11 +111,12 @@ suggestion에서 setState를 하기
  
 *파일구조*
 
-             ----- searchInput.js 
- App.js -----|
-             -----  suggestion.js 
-             
-
+```html             
+ App.js 
+    ㄴsearchInput.js 
+    ㄴsuggestion.js 
+```   
+    
 
 App에서 suggestion 인스턴스를 생성하고 함수인 onSelect를 정의해주었다.
 
