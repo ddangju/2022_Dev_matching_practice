@@ -86,7 +86,6 @@ export default function App({ target }) {
       if (e.key === "ArrowUp") {
         if (suggestion.state.selectedIndex > 0) {
           suggestion.state.selectedIndex -= 1;
-          // console.log(suggestion.state.selectedIndex);
         }
       } else if (e.key === "ArrowDown") {
         if (
