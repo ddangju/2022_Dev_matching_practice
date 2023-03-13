@@ -55,6 +55,7 @@ export default function App({ target }) {
       }
     },
   });
+  ///Suggestion 인스턴스를 생성한다
   const suggestion = new Suggestion({
     target,
     initialState: {
@@ -63,16 +64,28 @@ export default function App({ target }) {
     },
     onSelect: (lang) => {
       alert(lang, "<lang");
-      console.log(lang, "<lang");
     },
   });
+  ///Suggestion2 인스턴스를 생성한다
+  const suggestion2 = new Suggestion({
+    target,
+    initialState: {
+      items: ["1", "2"],
+      selectedIndex: 0,
+    },
+    onSelect: (lang) => {
+      console.log(lang);
+    },
+  });
+  console.log(suggestion.state.selectedIndex);
+  suggestion2.onSelect("F<<");
+  suggestion.onSelect("a");
 
   window.addEventListener("keydown", (e) => {
     if (suggestion.state?.items?.length > 0) {
       if (e.key === "ArrowUp") {
         if (suggestion.state.selectedIndex > 0) {
           suggestion.state.selectedIndex -= 1;
-          // console.log(suggestion.state.selectedIndex);
         }
       } else if (e.key === "ArrowDown") {
         if (
@@ -84,6 +97,11 @@ export default function App({ target }) {
             selectedIndex: suggestion.state.selectedIndex + 1,
           });
         }
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        suggestion.onSelect(
+          suggestion.state.items[suggestion.state.selectedIndex]
+        );
       }
     }
   });
