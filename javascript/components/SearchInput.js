@@ -24,10 +24,28 @@ export default function SearchInput({ target, initialState, onChange }) {
     <input class="SearchInput__input" type="text" placeholder="프로그램 언어를 입력하세요." value="${this.state}">
     `;
   };
-  
+
   this.render();
 
   this.form.addEventListener("keyup", (e) => {
-    onChange(e.target.value);
+    const actionIgnoreKeys = [
+      "Enter",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight",
+    ];
+    // actionIgnoreKeys으로 조건을 걸면 e.key가 눌릴때 fetch가 되기 때문에
+    // input에 어떠한 값을 적용해도 suggestion 창이 뜨지 않는다..!왜냐면
+    // e.key가 들어오지 않고 있기 떄문에~
+    // 우리가 하려던 것은....화살표 위/아래, 엔터가 눌릴때마다 onChange함수가 실행되고 있는 부분을
+    ///수정하려고한다..!
+    //
+    //화살표 키, 엔터가 포함되고 있지 않다면 onChange 호출
+    //화살표 키, 엔터가 포함되고 있다면 true이기 떄문에 호출하지 않음..!
+    if (actionIgnoreKeys.includes(e.key)) {
+      console.log("true");
+      onChange(e.target.value);
+    }
   });
 }

@@ -1,10 +1,12 @@
 export default function Suggestion({ target, initialState }) {
   this.state = {
-    selectedIndex: -1,
     items: initialState.items,
+    // selectedIndex: -1,
+    selectedIndex: 0,
   };
 
   this.setState = (nextState) => {
+    console.log("suggesiton");
     // {items:["1","2"]} 형태로 넘어옴
     this.state = nextState;
     this.render();
@@ -36,7 +38,6 @@ export default function Suggestion({ target, initialState }) {
       this.div.innerHTML = "";
     }
   };
-
   // append vs apeendChild
   /// appendChild의 경우 노트요소만 추가할 수 있음
   /// aeepnd의 경우 노드요소와 돔스트링을 추가할 수 있음
