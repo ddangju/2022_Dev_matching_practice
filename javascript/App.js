@@ -9,7 +9,7 @@ export default function App({ target }) {
   };
 
   //setState는 뭐하는 함수일까?
-  //초기값 state에 업데이트 되는 setState를 합치는 함수
+  //초기값 state에 업데이트 되면 업데이트 된 값을 setState에서 합친다.
   ///객체로 초기값을 지정해주고, 객체가 들어온다 => 객체의 복사와 관련
   this.setState = (nextState) => {
     this.state = {
@@ -43,6 +43,7 @@ export default function App({ target }) {
     onChange: async (keyword) => {
       ///매번 함수가 실행되면서 내용이 새로 생성됨!
       // 만약 키워드가 없다면 빈 리스트
+      console.log(keyword);
       if (keyword.length === 0) {
         this.setState({
           fetchedLanguages: [],
@@ -55,31 +56,41 @@ export default function App({ target }) {
       }
     },
   });
-  ///Suggestion 인스턴스를 생성한다
   const suggestion = new Suggestion({
     target,
     initialState: {
       items: [],
       selectedIndex: -1,
-    },
-    onSelect: (lang) => {
-      alert(lang, "<lang");
-    },
-  });
-  ///Suggestion2 인스턴스를 생성한다
-  const suggestion2 = new Suggestion({
-    target,
-    initialState: {
-      items: ["1", "2"],
       selectedIndex: 0,
-    },
-    onSelect: (lang) => {
-      console.log(lang);
+      // selectedIndex: -1,
     },
   });
-  console.log(suggestion.state.selectedIndex);
-  suggestion2.onSelect("F<<");
-  suggestion.onSelect("a");
+  ///Suggestion 인스턴스를 생성한다
+  // const suggestion = new Suggestion({
+  //   target,
+  //   initialState: {
+  //     items: [],
+  //     selectedIndex: 0,
+  //     // selectedIndex: -1,
+  //   },
+  //   onSelect: (lang) => {
+  //     alert(lang, "<lang");
+  //   },
+  // });
+  // ///Suggestion2 인스턴스를 생성한다
+  // const suggestion2 = new Suggestion({
+  //   target,
+  //   initialState: {
+  //     items: ["1", "2"],
+  //     selectedIndex: 0,
+  //   },
+  //   onSelect: (lang) => {
+  //     console.log(lang);
+  //   },
+  // });
+  // console.log(suggestion.state.selectedIndex);
+  // suggestion2.onSelect("F<<");
+  // suggestion.onSelect("a");
 
   window.addEventListener("keydown", (e) => {
     if (suggestion.state?.items?.length > 0) {
@@ -106,3 +117,6 @@ export default function App({ target }) {
     }
   });
 }
+
+// if(선택한 index가 length-1보다 작다면){
+// }

@@ -3,15 +3,24 @@ export default function Suggestion({ target, initialState, onSelect }) {
   this.state = {
     selectedIndex: initialState.selectedIndex,
     items: initialState.items,
+    // selectedIndex: -1,
+    selectedIndex: 0,
   };
+  //test
+<<<<<<< HEAD
+  //test2
+  //test3
   // this.onSelect = (lang) => {
   //   console.log(lang, "<lang");
   // };
   //this.onSelect => suggestion.js가 갖고있는 property
   //onSelect =>
   this.onSelect = onSelect;
+=======
+>>>>>>> parent of 70b7fbf (Test)
 
   this.setState = (nextState) => {
+    console.log("suggesiton");
     // {items:["1","2"]} 형태로 넘어옴
     this.state = nextState;
     this.render();
