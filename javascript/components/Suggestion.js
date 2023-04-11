@@ -7,17 +7,6 @@ export default function Suggestion({ target, initialState, onSelect }) {
     selectedIndex: 0,
   };
   //test
-<<<<<<< HEAD
-  //test2
-  //test3
-  // this.onSelect = (lang) => {
-  //   console.log(lang, "<lang");
-  // };
-  //this.onSelect => suggestion.js가 갖고있는 property
-  //onSelect =>
-  this.onSelect = onSelect;
-=======
->>>>>>> parent of 70b7fbf (Test)
 
   this.setState = (nextState) => {
     console.log("suggesiton");

@@ -1,5 +1,6 @@
 import SearchInput from "./components/SearchInput.js";
 import Suggestion from "./components/Suggestion.js";
+import Login from "./components/Login.js";
 import { fetchLanguages } from "./api/api.js";
 
 export default function App({ target }) {
@@ -20,30 +21,17 @@ export default function App({ target }) {
       ...suggestion.state,
       items: this.state.fetchedLanguages,
     });
-
-    ///////*****풀어보자면? */
-    // this.state = {
-    //   {
-    //   fetchedLanguages: [],
-    //   selectedLanguages: [],
-    // };,
-    //   {
-    //   fetchedLanguages: [languages],
-    // target.append(this.div)
-    // }
-    // };
-    // suggestion에 있는 setState업데이트
-    //초기값인 items:[]를 업데이트
   };
 
   // ----초기값과 div 인스턴스 생성----
+  new Login({ target });
+
   new SearchInput({
     target,
     initialState: "",
     onChange: async (keyword) => {
       ///매번 함수가 실행되면서 내용이 새로 생성됨!
       // 만약 키워드가 없다면 빈 리스트
-      console.log(keyword);
       if (keyword.length === 0) {
         this.setState({
           fetchedLanguages: [],
