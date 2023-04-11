@@ -6,6 +6,7 @@ export default function Suggestion({ target, initialState }) {
   };
   //test
   //test2
+  //test3
   this.setState = (nextState) => {
     console.log("suggesiton");
     // {items:["1","2"]} 형태로 넘어옴
