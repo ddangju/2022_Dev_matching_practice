@@ -1,5 +1,7 @@
-export default function Suggestion({ target, initialState }) {
+// Suggestion 생성자 함수를 정의
+export default function Suggestion({ target, initialState, onSelect }) {
   this.state = {
+    selectedIndex: initialState.selectedIndex,
     items: initialState.items,
     // selectedIndex: -1,
     selectedIndex: 0,
@@ -7,6 +9,13 @@ export default function Suggestion({ target, initialState }) {
   //test
   //test2
   //test3
+  // this.onSelect = (lang) => {
+  //   console.log(lang, "<lang");
+  // };
+  //this.onSelect => suggestion.js가 갖고있는 property
+  //onSelect =>
+  this.onSelect = onSelect;
+
   this.setState = (nextState) => {
     console.log("suggesiton");
     // {items:["1","2"]} 형태로 넘어옴
