@@ -6,7 +6,6 @@ export const API_END_POINT =
 //fetch하는 request함수와 언어목록을 조회하는 함수를 분리함!\
 
 const request = async (url) => {
-  console.log(url, "<url");
   const res = await fetch(url);
 
   if (res.ok) {
