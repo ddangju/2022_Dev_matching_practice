@@ -61,23 +61,12 @@ export default function App({ target }) {
     initialState: {
       items: [],
       selectedIndex: -1,
-      selectedIndex: 0,
-      // selectedIndex: -1,
+    },
+    onSelect: (lang) => {
+      // alert(lang, "<lang");
     },
   });
-  ///Suggestion 인스턴스를 생성한다
-  // const suggestion = new Suggestion({
-  //   target,
-  //   initialState: {
-  //     items: [],
-  //     selectedIndex: 0,
-  //     // selectedIndex: -1,
-  //   },
-  //   onSelect: (lang) => {
-  //     alert(lang, "<lang");
-  //   },
-  // });
-  // ///Suggestion2 인스턴스를 생성한다
+  ///Suggestion2 인스턴스를 생성한다
   // const suggestion2 = new Suggestion({
   //   target,
   //   initialState: {
@@ -88,15 +77,16 @@ export default function App({ target }) {
   //     console.log(lang);
   //   },
   // });
-  // console.log(suggestion.state.selectedIndex);
-  // suggestion2.onSelect("F<<");
-  // suggestion.onSelect("a");
+  // suggestion2.onSelect("suggestion2 lang");
+  suggestion.onSelect("a");
 
   window.addEventListener("keydown", (e) => {
     if (suggestion.state?.items?.length > 0) {
       if (e.key === "ArrowUp") {
         if (suggestion.state.selectedIndex > 0) {
-          suggestion.state.selectedIndex -= 1;
+          console.log(suggestion.state.selectedIndex, "<aop");
+          // suggestion.state.selectedIndex -= 1;
+          suggestion.state.selectedIndex = suggestion.state.selectedIndex - 1;
         }
       } else if (e.key === "ArrowDown") {
         if (
