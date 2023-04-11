@@ -4,6 +4,7 @@ export default function Suggestion({ target, initialState }) {
     // selectedIndex: -1,
     selectedIndex: 0,
   };
+  //test
 
   this.setState = (nextState) => {
     console.log("suggesiton");
