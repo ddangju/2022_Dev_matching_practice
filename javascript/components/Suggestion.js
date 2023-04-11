@@ -4,6 +4,7 @@ export default function Suggestion({ target, initialState, onSelect }) {
     selectedIndex: initialState.selectedIndex,
     items: initialState.items,
   };
+  console.log(this.state.selectedIndex, "<<");
   // this.onSelect = (lang) => {
   //   console.log(lang, "<lang");
   // };
