@@ -11,29 +11,15 @@
 <body>
   <div class="App">
     <form class="form">
-      <input class="user_id" type="text" value="" required/>
+      <input class="user_id" type="text" min="3"  max="8"  required/>
+      <input class="user_pw" type="text"required/>
       <input class="user_submit" type="submit">
     </form>
-    <!-- <input class="user_pw" type="text"/> -->
   <!-- </div> -->
 </body>
 <!-- <link href="/build/stylesheets/index.css" rel="stylesheet"> -->
 <script>
 
-  const user_id = document.querySelector(".user_id")
-  const user_submit = document.querySelector(".user_submit")
-  const form = document.querySelector(".form")
-
-  user_id.addEventListener("invalid",()=>{
-    console.log(user_id.validity)
-    user_id.setCustomValidity("커스텀메세지")
-    // if(user_id.value === ""){
-    //   console.log("dd")
-    //   input.setAttribute("title","abcd")
-    // }
-  })
-  // submit_input.setAttribute("title","아이디 입력")
-  // console.log(submit_input,"<")
 
 </script>
 <link rel="stylesheet" href="./css/index.css">
