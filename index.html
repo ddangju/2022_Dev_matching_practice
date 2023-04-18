@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <div class="App">
-  <!-- </div> -->
-</body>
-<!-- <link href="/build/stylesheets/index.css" rel="stylesheet"> -->
-<link rel="stylesheet" href="./css/index.css">
 <script type="module" src="./index.js">
 </script>
 
+<body>
+  <div class="App">
+    <form class="form">
+      <input class="user_id" type="text" value="" required />
+      <input class="user_submit" type="submit">
+    </form>
+    <!-- <input class="user_pw" type="text"/> -->
+    <!-- </div> -->
+</body>
+<!-- <link href="/build/stylesheets/index.css" rel="stylesheet"> -->
+<script>
+
+  const user_id = document.querySelector(".user_id")
+  const user_submit = document.querySelector(".user_submit")
+  const form = document.querySelector(".form")
+
+  const eventHandler = (e) => {
+    // console.log(e.target.value.length)
+    let value = e.target.value
+
+    if (value.length < 5 && value.includes("@")) {
+      console.log("true!!!")
+    }
+  }
+
+  user_id.addEventListener("invalid", eventHandler)
+  user_id.addEventListener("keyup", eventHandler)
+
+  // user_id.addEventListener("invalid", () => {
+  //   console.log(user_id.validity)
+  //   user_id.setCustomValidity("커스텀메세지")
+  // })
+
+
+</script>
+<link rel="stylesheet" href="./css/index.css">
 
 </html>

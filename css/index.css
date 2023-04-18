@@ -11,14 +11,15 @@ li {
   list-style: none;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   margin: 0;
 }
-button{
-  display:block;
-	position: absolute;
+button {
+  display: block;
+  position: absolute;
   left: -9999px;
   top: -9999px;
   width: 79vw;
@@ -45,11 +46,11 @@ button{
   border: 1px solid black;
   border-radius: 24px;
   padding: 10px 24px;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .Suggestion {
-  display:none;
+  display: none;
   position: absolute;
   font-size: 20px;
   width: 300px;
@@ -58,7 +59,6 @@ button{
   padding: 10px;
   border-radius: 24px;
   border: 1px solid black;
-
 }
 
 .Suggestion ul {
@@ -72,15 +72,15 @@ button{
 }
 
 .Suggestion li:hover {
-  background-color: #90CDF4;
+  background-color: #90cdf4;
 }
 
 .selected {
-  background-color: #BEE3F8;
+  background-color: #bee3f8;
 }
 
 .Suggestion__item--matched {
-  background-color: #9AE6B4;
+  background-color: #9ae6b4;
 }
 
 .SelectedLanguage {
@@ -92,7 +92,6 @@ button{
   height: 37.5px;
   margin-top: -100px;
   margin-bottom: 10px;
-
 }
 
 .SelectedLanguage li {
@@ -101,7 +100,17 @@ button{
   border: 1px solid #ccc;
   border-radius: 8px;
   max-width: 100px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.user_id {
+  height: 40px;
+  margin-bottom: 20px;
+  width: 250px;
+}
+.user_pw {
+  height: 40px;
+  width: 250px;
+  margin-bottom: 20px;
 }
